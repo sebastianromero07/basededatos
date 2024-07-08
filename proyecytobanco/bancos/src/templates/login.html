@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            width: 800px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .left-panel {
+            background: linear-gradient(135deg, #fbc7d4 0%, #9796f0 100%);
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .logo {
+            text-align: center;
+        }
+        .logo img {
+            width: 100px;
+        }
+        .logo h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .right-panel {
+            background: white;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+        .login-form {
+            width: 100%;
+        }
+        .login-form h2 {
+            margin: 0 0 20px;
+            font-size: 24px;
+            color: #ff00ff;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #888;
+        }
+        .input-group input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+        .input-group input:focus {
+            border-color: #ff00ff;
+        }
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .remember-me input {
+            margin-right: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #ff00ff;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d400d4;
+        }
+        .extra-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .extra-links a {
+            color: #888;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .extra-links a:hover {
+            color: #ff00ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="logo">
+                <img src="logo.png" alt="Wavy Logo">
+                <h1>Wavy.</h1>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="login-form">
+                <h2>Get started!</h2>
+                <form action="#">
+                    <div class="input-group">
+                        <label for="username">User name</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your name or email">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password">
+                    </div>
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <div class="extra-links">
+                    <a href="#">Forgot your password?</a>
+                    <a href="#">Don't have an account? Sign up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

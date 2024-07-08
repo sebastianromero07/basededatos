@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-image: url('images.png'); /* Imagen de fondo */
+            background-size: cover; /* Ajusta el tamaño de la imagen */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(144, 164, 174, 0.9); /* Fondo semitransparente */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        form label {
+            color: #263238; /* Color del texto del formulario */
+        }
+        form input, form select {
+            background-color: #cfd8dc; /* Color de fondo de los inputs */
+            border: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        form input::placeholder {
+            color: #607d8b; /* Color del placeholder */
+        }
+        form button {
+            background-color: #263238; /* Color del botón */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #37474f; /* Color del botón al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registrar Pago</h1>
+        <form action="/insert_pago" method="post">
+            <div class="mb-3">
+                <label for="dni" class="form-label">DNI Cliente:</label>
+                <input type="text" class="form-control" id="dni" name="dni" placeholder="Enter your DNI" required>
+            </div>
+            <div class="mb-3">
+                <label for="cuotapago_idP" class="form-label">ID de Cuota de Pago:</label>
+                <input type="number" class="form-control" id="cuotapago_idP" name="cuotapago_idP" placeholder="Enter the payment quota ID" required>
+            </div>
+            <div class="mb-3">
+                <label for="mora" class="form-label">Mora:</label>
+                <input type="number" step="0.01" class="form-control" id="mora" name="mora" placeholder="Enter the delay fee" required>
+            </div>
+            <div class="mb-3">
+                <label for="fechapago" class="form-label">Fecha de Pago:</label>
+                <input type="date" class="form-control" id="fechapago" name="fechapago" required>
+            </div>
+            <div class="mb-3">
+                <label for="montop" class="form-label">Monto Pagado:</label>
+                <input type="number" class="form-control" id="montop" name="montop" placeholder="Enter the amount paid" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar Pago</button>
+        </form>
+    </div>
+</body>
+</html>
