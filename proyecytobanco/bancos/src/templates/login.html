@@ -45,10 +45,10 @@
             align-items: center;
             padding: 40px;
         }
-        .login-form {
+        .login-form, .register-form {
             width: 100%;
         }
-        .login-form h2 {
+        .login-form h2, .register-form h2 {
             margin: 0 0 20px;
             font-size: 24px;
             color: #ff00ff;
@@ -111,34 +111,80 @@
     <div class="container">
         <div class="left-panel">
             <div class="logo">
-                <img src="logo.png" alt="Wavy Logo">
+                <img src="perfil.jpg" alt="Wavy Logo">
                 <h1>Wavy.</h1>
             </div>
         </div>
         <div class="right-panel">
-            <div class="login-form">
-                <h2>Get started!</h2>
-                <form action="#">
+            <div class="login-form" id="login-form">
+                <h2>Log in</h2>
+                <form action="/login" method="post">
                     <div class="input-group">
-                        <label for="username">User name</label>
-                        <input type="text" id="username" name="username" placeholder="Enter your name or email">
+                        <label for="dni">DNI</label>
+                        <input type="text" id="dni" name="dni" placeholder="Enter your DNI" required>
                     </div>
                     <div class="input-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password">
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit">Log in</button>
+                </form>
+                <div class="extra-links">
+                    <a href="#" onclick="showRegisterForm()">Don't have an account? Sign up</a>
+                </div>
+            </div>
+            <div class="register-form" id="register-form" style="display:none;">
+                <h2>Get started!</h2>
+                <form action="/register" method="post">
+                    <div class="input-group">
+                        <label for="dni">DNI</label>
+                        <input type="text" id="dni" name="dni" placeholder="Enter your DNI" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" placeholder="Enter your surname" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" placeholder="Enter your address" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="tipo_empleado">Tipo de empleado</label>
+                        <select id="tipo_empleado" name="tipo_empleado" required>
+                            <option value="analista">Analista</option>
+                            <option value="cajero">Cajero</option>
+                            <option value="comite">Comité</option>
+                        </select>
                     </div>
                     <div class="remember-me">
                         <input type="checkbox" id="remember" name="remember">
                         <label for="remember">Remember me</label>
                     </div>
-                    <button type="submit">Login</button>
+                    <button type="submit">Register</button>
                 </form>
                 <div class="extra-links">
-                    <a href="#">Forgot your password?</a>
-                    <a href="#">Don't have an account? Sign up</a>
+                    <a href="#" onclick="showLoginForm()">Already have an account? Log in</a>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        function showRegisterForm() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+        }
+        function showLoginForm() {
+            document.getElementById('register-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
